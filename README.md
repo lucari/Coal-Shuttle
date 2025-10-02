@@ -26,7 +26,7 @@ The pin assignment is:
   A2 - Spare  
   A3 - Direction (0v - 2.5v - 5v)  
   
-_It should be noted that there is a small design flaw on V1 of the board. The Relay module interface uses 5v from the external regulator. This should be from the Arduino 5v so it is common with the output pins. This is so it can drive the opto-coupler LED correctly (common 5v not ground). The external 5v <ins>must</ins> be used to drive the relays, also knows as JD Power. Ideally, the 5v lines should be through a jumper so the correct one can be selected for the interface type. This will be fixed on the next board. In the short term, the 5v from the I2C connector can be used for the relay 'IN' connections and the 5v on the module interface can be used for JD power._
+_It should be noted that there is a small design flaw on V1 of the board. The Relay module interface uses 5v from the external regulator. This should be from the Arduino 5v so it is common with the output pins. This is so it can drive the opto-coupler LED correctly (common 5v not ground). However, the external regulator 5v <ins>must</ins> be used to drive the relays (also known as JD Power). These draw too much current through the Arduino regulator. Ideally, the 5v lines should be through a jumper so the correct one can be selected for the interface type. This will be fixed on the next board. In the short term, the 5v from the I2C connector can be used for the relay 'IN' connections and the 5v on the module interface can be used for JD power._
 
 
 ## Arduino Code
